@@ -713,6 +713,136 @@ a:focus {
 
 /* contact section */
 
+// login section
+
+.login_section {
+    background-color: #f8f8f8;
+
+    .login_box {
+        display: flex;
+        align-items: stretch;
+        width: 85%;
+        margin: 0 auto;
+        background-color: $white;
+        box-shadow: 0 0 25px 0 rgba($black, 0.08);
+    }
+
+    .login_detail {
+        flex: 1;
+        padding: 55px 45px;
+        background-image: linear-gradient(rgba($black, 0.55), rgba($black, 0.55)), url(../images/slider-bg.jpg);
+        background-size: cover;
+        background-position: center;
+        color: $white;
+
+        h3 {
+            font-weight: bold;
+            text-transform: uppercase;
+            color: $primary;
+            margin-bottom: 18px;
+        }
+
+        p {
+            color: $white;
+            margin-bottom: 35px;
+        }
+    }
+
+    .login_stats {
+        display: flex;
+        margin: 0 -8px;
+
+        div {
+            border: 1px solid rgba($white, 0.45);
+            padding: 18px 20px;
+            margin: 0 8px;
+            min-width: 110px;
+            text-align: center;
+        }
+
+        span {
+            display: block;
+            font-size: 24px;
+            font-weight: bold;
+            color: $primary;
+        }
+
+        small {
+            color: $white;
+            text-transform: uppercase;
+        }
+    }
+
+    .login_form {
+        flex: 1;
+        padding: 45px;
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #151615;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid #ac9784;
+            background-color: transparent;
+            padding: 12px 0;
+            margin-bottom: 25px;
+            outline: none;
+        }
+
+        button {
+            @include hero_btn($btnBlack, $white, 10px, 45px);
+            width: 100%;
+            margin-top: 10px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+    }
+
+    .login_options {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 25px;
+
+        a {
+            color: $btnBlack;
+
+            &:hover {
+                color: $primary;
+            }
+        }
+    }
+
+    .remember_check {
+        display: flex !important;
+        align-items: center;
+        margin: 0 !important;
+        font-weight: 400 !important;
+
+        input {
+            margin-right: 8px;
+        }
+    }
+
+    .signup_text {
+        text-align: center;
+        margin: 20px 0 0;
+
+        a {
+            color: $primary;
+            font-weight: 600;
+        }
+    }
+}
+
+// end login section
+
 /* info section */
 .info_section {
     background-color: #161616;

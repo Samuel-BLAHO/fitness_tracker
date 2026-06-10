@@ -44,8 +44,8 @@
             <li class="<?php echo ($active_page ?? '') === 'contact' ? ' active' : ''; ?>">
               <a class="" href="contact.php">Contact Us</a>
             </li>
-            <li class="">
-              <a class="" href="#">Login</a>
+            <li class="<?php echo ($active_page ?? '') === 'login' ? ' active' : ''; ?>">
+              <a class="" href="login.php">Login</a>
             </li>
           </ul>
         </div>
