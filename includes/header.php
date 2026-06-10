@@ -6,6 +6,17 @@ $body_class = $body_class ?? '';
 function nav_active($page, $active_page) {
   return $page === $active_page ? ' active' : '';
 }
+
+$nav_items = [
+  ['page' => 'home', 'label' => 'Home', 'url' => 'index.php'],
+  ['page' => 'about', 'label' => 'About', 'url' => 'about.php'],
+  ['page' => 'service', 'label' => 'Services', 'url' => 'service.php'],
+  ['page' => 'why-us', 'label' => 'Why Us', 'url' => 'why-us.php'],
+  ['page' => 'customers', 'label' => 'Customers', 'url' => 'customers.php'],
+  ['page' => 'results', 'label' => 'Results', 'url' => 'results.php'],
+  ['page' => 'contact', 'label' => 'Contact', 'url' => 'contact.php'],
+  ['page' => 'login', 'label' => 'Login', 'url' => 'login.php'],
+];
 ?>
 <!DOCTYPE html>
 <html>
@@ -90,22 +101,17 @@ function nav_active($page, $active_page) {
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <div class="d-flex  flex-column flex-lg-row align-items-center">
-                <ul class="navbar-nav  ">
-                  <li class="nav-item<?php echo nav_active('home', $active_page); ?>">
-                    <a class="nav-link" href="index.php">Home <?php if ($active_page === 'home') { ?><span class="sr-only">(current)</span><?php } ?></a>
+                <ul class="navbar-nav">
+<?php foreach ($nav_items as $item) { ?>
+                  <li class="nav-item<?php echo nav_active($item['page'], $active_page); ?>">
+                    <a class="nav-link" href="<?php echo htmlspecialchars($item['url']); ?>">
+                      <?php echo htmlspecialchars($item['label']); ?>
+<?php if ($active_page === $item['page']) { ?>
+                      <span class="sr-only">(current)</span>
+<?php } ?>
+                    </a>
                   </li>
-                  <li class="nav-item<?php echo nav_active('about', $active_page); ?>">
-                    <a class="nav-link" href="about.php">About </a>
-                  </li>
-                  <li class="nav-item<?php echo nav_active('service', $active_page); ?>">
-                    <a class="nav-link" href="service.php">Services </a>
-                  </li>
-                  <li class="nav-item<?php echo nav_active('contact', $active_page); ?>">
-                    <a class="nav-link" href="contact.php">Contact Us</a>
-                  </li>
-                  <li class="nav-item<?php echo nav_active('login', $active_page); ?>">
-                    <a class="nav-link" href="login.php">Login</a>
-                  </li>
+<?php } ?>
                 </ul>
                 <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
                   <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>

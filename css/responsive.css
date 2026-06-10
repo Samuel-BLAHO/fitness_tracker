@@ -28,6 +28,10 @@
     .custom_nav2 .navbar-nav {
         margin-top: 10px;
     }
+
+    .custom_nav2 .navbar-expand-lg .navbar-nav .nav-item .nav-link {
+        padding: 10px 24px;
+    }
 }
 
 @media (max-width: 768px) {

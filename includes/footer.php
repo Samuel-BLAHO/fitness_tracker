@@ -32,21 +32,16 @@
             Menus
           </h6>
           <ul>
-            <li class="<?php echo ($active_page ?? '') === 'home' ? ' active' : ''; ?>">
-              <a class="" href="index.php">Home <span class="sr-only">(current)</span></a>
+<?php foreach ($nav_items ?? [] as $item) { ?>
+            <li class="<?php echo ($active_page ?? '') === $item['page'] ? ' active' : ''; ?>">
+              <a class="" href="<?php echo htmlspecialchars($item['url']); ?>">
+                <?php echo htmlspecialchars($item['label']); ?>
+<?php if (($active_page ?? '') === $item['page']) { ?>
+                <span class="sr-only">(current)</span>
+<?php } ?>
+              </a>
             </li>
-            <li class="<?php echo ($active_page ?? '') === 'about' ? ' active' : ''; ?>">
-              <a class="" href="about.php">About </a>
-            </li>
-            <li class="<?php echo ($active_page ?? '') === 'service' ? ' active' : ''; ?>">
-              <a class="" href="service.php">Services </a>
-            </li>
-            <li class="<?php echo ($active_page ?? '') === 'contact' ? ' active' : ''; ?>">
-              <a class="" href="contact.php">Contact Us</a>
-            </li>
-            <li class="<?php echo ($active_page ?? '') === 'login' ? ' active' : ''; ?>">
-              <a class="" href="login.php">Login</a>
-            </li>
+<?php } ?>
           </ul>
         </div>
         <div class="col-md-3">
