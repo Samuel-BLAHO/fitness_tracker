@@ -27,6 +27,11 @@
           </div>
         </div>
         <form class="login_form" action="" method="post">
+<?php if (!empty($login_error)) { ?>
+          <div class="form_alert form_alert_error">
+            <?php echo e($login_error); ?>
+          </div>
+<?php } ?>
           <div>
             <label for="email">Email Address</label>
             <input type="email" id="email" name="email" placeholder="Enter your email" required>
@@ -46,7 +51,7 @@
             Login
           </button>
           <p class="signup_text">
-            New to Energym? <a href="contact.php">Join now</a>
+            Admin area for managing website services.
           </p>
         </form>
       </div>

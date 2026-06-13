@@ -927,6 +927,144 @@ a:focus {
 }
 
 /* end login section */
+.form_alert {
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.form_alert_error {
+  background-color: #ffe8e8;
+  color: #8a1f1f;
+  border-left: 4px solid #c83232;
+}
+
+.admin_section {
+  background-color: #f8f8f8;
+}
+
+.admin_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.admin_header h2 {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.admin_header p {
+  margin: 0;
+  color: #444444;
+}
+
+.admin_header_actions,
+.admin_actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.admin_header_actions a,
+.admin_actions a,
+.admin_actions button {
+  display: inline-block;
+  padding: 10px 24px;
+  background-color: #151615;
+  border: 1px solid #151615;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.admin_header_actions a.secondary,
+.admin_actions a {
+  background-color: transparent;
+  color: #151615;
+}
+
+.admin_actions button.danger,
+.admin_table_actions a.danger {
+  background-color: #9f2525;
+  border-color: #9f2525;
+  color: #ffffff;
+}
+
+.admin_table_wrap,
+.admin_form,
+.admin_confirm {
+  background-color: #ffffff;
+  box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.08);
+  padding: 28px;
+}
+
+.admin_table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin_table th,
+.admin_table td {
+  padding: 14px 12px;
+  border-bottom: 1px solid #eeeeee;
+  text-align: left;
+}
+
+.admin_table th {
+  background-color: #151615;
+  color: #ffffff;
+}
+
+.admin_table_actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.admin_table_actions a {
+  padding: 7px 12px;
+  background-color: #f8bc1a;
+  color: #151615;
+  font-weight: 600;
+}
+
+.admin_form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.admin_form input[type="text"],
+.admin_form input[type="number"],
+.admin_form textarea {
+  width: 100%;
+  border: 1px solid #d8d8d8;
+  padding: 11px 12px;
+  margin-bottom: 20px;
+  outline: none;
+}
+
+.admin_form_grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.admin_checkbox {
+  display: flex !important;
+  align-items: center;
+  gap: 8px;
+  margin-top: 31px;
+}
+
+.admin_confirm h3 {
+  font-weight: bold;
+}
+
 /* info section */
 .info_section {
   background-color: #161616;
