@@ -1,4 +1,11 @@
   <!-- service section -->
+<?php
+require_once __DIR__ . '/../app/bootstrap.php';
+
+use App\Controllers\ServiceController;
+
+$services = (new ServiceController())->publicServices();
+?>
 
   <section class="service_section layout_padding">
     <div class="container">
@@ -8,90 +15,25 @@
         </h2>
       </div>
       <div class="service_container">
+<?php foreach ($services as $service) { ?>
         <div class="box">
-          <img src="images/s-1.jpg" alt="">
+          <img src="<?php echo e($service['image']); ?>" alt="<?php echo e($service['title']); ?>">
           <h6 class="visible_heading">
-            CROSSFIT TRAINING
+            <?php echo e($service['title']); ?>
           </h6>
           <div class="link_box">
             <a href="service.php">
               <img src="images/link.png" alt="">
             </a>
             <h6>
-              CROSSFIT TRAINING
+              <?php echo e($service['title']); ?>
             </h6>
+            <p>
+              <?php echo e($service['description']); ?>
+            </p>
           </div>
         </div>
-        <div class="box">
-          <img src="images/s-2.jpg" alt="">
-          <h6 class="visible_heading">
-            FITNESS
-          </h6>
-          <div class="link_box">
-            <a href="service.php">
-              <img src="images/link.png" alt="">
-            </a>
-            <h6>
-              FITNESS
-            </h6>
-          </div>
-        </div>
-        <div class="box">
-          <img src="images/s-3.jpg" alt="">
-          <h6 class="visible_heading">
-            DYNAMIC STRENGTH TRAINING
-          </h6>
-          <div class="link_box">
-            <a href="service.php">
-              <img src="images/link.png" alt="">
-            </a>
-            <h6>
-              DYNAMIC STRENGTH TRAINING
-            </h6>
-          </div>
-        </div>
-        <div class="box">
-          <img src="images/s-4.jpg" alt="">
-          <h6 class="visible_heading">
-            HEALTH
-          </h6>
-          <div class="link_box">
-            <a href="service.php">
-              <img src="images/link.png" alt="">
-            </a>
-            <h6>
-              HEALTH
-            </h6>
-          </div>
-        </div>
-        <div class="box">
-          <img src="images/s-5.jpg" alt="">
-          <h6 class="visible_heading">
-            WORKOUT
-          </h6>
-          <div class="link_box">
-            <a href="service.php">
-              <img src="images/link.png" alt="">
-            </a>
-            <h6>
-              WORKOUT
-            </h6>
-          </div>
-        </div>
-        <div class="box">
-          <img src="images/s-6.jpg" alt="">
-          <h6 class="visible_heading">
-            STRATEGIES
-          </h6>
-          <div class="link_box">
-            <a href="service.php">
-              <img src="images/link.png" alt="">
-            </a>
-            <h6>
-              STRATEGIES
-            </h6>
-          </div>
-        </div>
+<?php } ?>
       </div>
     </div>
   </section>
