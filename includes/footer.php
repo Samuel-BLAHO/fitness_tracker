@@ -34,8 +34,8 @@
           <ul>
 <?php foreach ($nav_items ?? [] as $item) { ?>
             <li class="<?php echo ($active_page ?? '') === $item['page'] ? ' active' : ''; ?>">
-              <a class="" href="<?php echo htmlspecialchars($item['url']); ?>">
-                <?php echo htmlspecialchars($item['label']); ?>
+              <a class="" href="<?php echo e($item['url']); ?>">
+                <?php echo e($item['label']); ?>
 <?php if (($active_page ?? '') === $item['page']) { ?>
                 <span class="sr-only">(current)</span>
 <?php } ?>
@@ -50,27 +50,27 @@
           </h6>
           <ul>
             <li>
-              <a href="why-us.php">
+              <a href="<?php echo e($base_path ?? ''); ?>why-us.php">
                 Why Choose Us
               </a>
             </li>
             <li>
-              <a href="customers.php">
+              <a href="<?php echo e($base_path ?? ''); ?>customers.php">
                 Customers
               </a>
             </li>
             <li>
-              <a href="results.php">
+              <a href="<?php echo e($base_path ?? ''); ?>results.php">
                 Results
               </a>
             </li>
             <li>
-              <a href="service.php">
+              <a href="<?php echo e($base_path ?? ''); ?>service.php">
                 Training
               </a>
             </li>
             <li>
-              <a href="contact.php">
+              <a href="<?php echo e($base_path ?? ''); ?>contact.php">
                 Quote
               </a>
             </li>
@@ -81,38 +81,38 @@
             Contact Us
           </h6>
           <div class="info_link-box">
-            <a href="contact.php">
-              <img src="images/location-white.png" alt="">
+            <a href="<?php echo e($base_path ?? ''); ?>contact.php">
+              <img src="<?php echo e($base_path ?? ''); ?>images/location-white.png" alt="">
               <span> No.123, loram ipusm</span>
             </a>
-            <a href="contact.php">
-              <img src="images/call-white.png" alt="">
+            <a href="<?php echo e($base_path ?? ''); ?>contact.php">
+              <img src="<?php echo e($base_path ?? ''); ?>images/call-white.png" alt="">
               <span>+01 12345678901</span>
             </a>
-            <a href="contact.php">
-              <img src="images/mail-white.png" alt="">
+            <a href="<?php echo e($base_path ?? ''); ?>contact.php">
+              <img src="<?php echo e($base_path ?? ''); ?>images/mail-white.png" alt="">
               <span> demo123@gmail.com</span>
             </a>
           </div>
           <div class="info_social">
             <div>
               <a href="">
-                <img src="images/facebook-logo-button.png" alt="">
+                <img src="<?php echo e($base_path ?? ''); ?>images/facebook-logo-button.png" alt="">
               </a>
             </div>
             <div>
               <a href="">
-                <img src="images/twitter-logo-button.png" alt="">
+                <img src="<?php echo e($base_path ?? ''); ?>images/twitter-logo-button.png" alt="">
               </a>
             </div>
             <div>
               <a href="">
-                <img src="images/linkedin.png" alt="">
+                <img src="<?php echo e($base_path ?? ''); ?>images/linkedin.png" alt="">
               </a>
             </div>
             <div>
               <a href="">
-                <img src="images/instagram.png" alt="">
+                <img src="<?php echo e($base_path ?? ''); ?>images/instagram.png" alt="">
               </a>
             </div>
           </div>
@@ -133,8 +133,8 @@
   </section>
   <!-- footer section -->
 
-  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script type="text/javascript" src="<?php echo e($base_path ?? ''); ?>js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="<?php echo e($base_path ?? ''); ?>js/bootstrap.js"></script>
 
   <script>
     function openNav() {

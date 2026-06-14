@@ -1,21 +1,26 @@
 <?php
+require_once __DIR__ . '/../app/bootstrap.php';
+
+use App\Core\Auth;
+
 $page_title = $page_title ?? 'Energym';
 $active_page = $active_page ?? 'home';
 $body_class = $body_class ?? '';
+$base_path = $base_path ?? '';
 
 function nav_active($page, $active_page) {
   return $page === $active_page ? ' active' : '';
 }
 
 $nav_items = [
-  ['page' => 'home', 'label' => 'Home', 'url' => 'index.php'],
-  ['page' => 'about', 'label' => 'About', 'url' => 'about.php'],
-  ['page' => 'service', 'label' => 'Services', 'url' => 'service.php'],
-  ['page' => 'why-us', 'label' => 'Why Us', 'url' => 'why-us.php'],
-  ['page' => 'customers', 'label' => 'Customers', 'url' => 'customers.php'],
-  ['page' => 'results', 'label' => 'Results', 'url' => 'results.php'],
-  ['page' => 'contact', 'label' => 'Contact', 'url' => 'contact.php'],
-  ['page' => 'login', 'label' => 'Login', 'url' => 'login.php'],
+  ['page' => 'home', 'label' => 'Home', 'url' => $base_path . 'index.php'],
+  ['page' => 'about', 'label' => 'About', 'url' => $base_path . 'about.php'],
+  ['page' => 'service', 'label' => 'Services', 'url' => $base_path . 'service.php'],
+  ['page' => 'why-us', 'label' => 'Why Us', 'url' => $base_path . 'why-us.php'],
+  ['page' => 'customers', 'label' => 'Customers', 'url' => $base_path . 'customers.php'],
+  ['page' => 'results', 'label' => 'Results', 'url' => $base_path . 'results.php'],
+  ['page' => 'contact', 'label' => 'Contact', 'url' => $base_path . 'contact.php'],
+  ['page' => 'login', 'label' => Auth::check() ? 'Admin' : 'Login', 'url' => Auth::check() ? $base_path . 'admin/index.php' : $base_path . 'login.php'],
 ];
 ?>
 <!DOCTYPE html>
@@ -32,32 +37,32 @@ $nav_items = [
   <meta name="description" content="" />
   <meta name="author" content="" />
 
-  <title><?php echo htmlspecialchars($page_title); ?></title>
+  <title><?php echo e($page_title); ?></title>
 
   <!-- slider stylesheet -->
   <link rel="stylesheet" type="text/css"
     href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
 
   <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="<?php echo e($base_path); ?>css/bootstrap.css" />
 
   <!-- fonts style -->
   <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan|Dosis:400,600,700|Poppins:400,600,700&display=swap"
     rel="stylesheet" />
   <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
+  <link href="<?php echo e($base_path); ?>css/style.css" rel="stylesheet" />
   <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
+  <link href="<?php echo e($base_path); ?>css/responsive.css" rel="stylesheet" />
 </head>
 
-<body<?php echo $body_class ? ' class="' . htmlspecialchars($body_class) . '"' : ''; ?>>
+<body<?php echo $body_class ? ' class="' . e($body_class) . '"' : ''; ?>>
   <div class="hero_area">
     <!-- header section strats -->
     <header class="header_section">
       <div class="container">
         <nav class="navbar navbar-expand-lg custom_nav-container">
-          <a class="navbar-brand" href="index.php">
-            <img src="images/logo.png" alt="" />
+          <a class="navbar-brand" href="<?php echo e($base_path); ?>index.php">
+            <img src="<?php echo e($base_path); ?>images/logo.png" alt="" />
             <span>
               Energym
             </span>
@@ -65,20 +70,20 @@ $nav_items = [
           <div class="contact_nav" id="">
             <ul class="navbar-nav ">
               <li class="nav-item">
-                <a class="nav-link" href="contact.php">
-                  <img src="images/location.png" alt="" />
+                <a class="nav-link" href="<?php echo e($base_path); ?>contact.php">
+                  <img src="<?php echo e($base_path); ?>images/location.png" alt="" />
                   <span>Location</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contact.php">
-                  <img src="images/call.png" alt="" />
+                <a class="nav-link" href="<?php echo e($base_path); ?>contact.php">
+                  <img src="<?php echo e($base_path); ?>images/call.png" alt="" />
                   <span>Call : + 01 1234567890</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="contact.php">
-                  <img src="images/envelope.png" alt="" />
+                <a class="nav-link" href="<?php echo e($base_path); ?>contact.php">
+                  <img src="<?php echo e($base_path); ?>images/envelope.png" alt="" />
                   <span>demo@gmail.com</span>
                 </a>
               </li>
@@ -104,8 +109,8 @@ $nav_items = [
                 <ul class="navbar-nav">
 <?php foreach ($nav_items as $item) { ?>
                   <li class="nav-item<?php echo nav_active($item['page'], $active_page); ?>">
-                    <a class="nav-link" href="<?php echo htmlspecialchars($item['url']); ?>">
-                      <?php echo htmlspecialchars($item['label']); ?>
+                    <a class="nav-link" href="<?php echo e($item['url']); ?>">
+                      <?php echo e($item['label']); ?>
 <?php if ($active_page === $item['page']) { ?>
                       <span class="sr-only">(current)</span>
 <?php } ?>
@@ -147,10 +152,10 @@ $nav_items = [
                         labore et dolore magna aliqua. Ut enim ad minim veniam
                       </p>
                       <div class="btn-box">
-                        <a href="about.php" class="btn-1">
+                        <a href="<?php echo e($base_path); ?>about.php" class="btn-1">
                           Read More
                         </a>
-                        <a href="contact.php" class="btn-2">
+                        <a href="<?php echo e($base_path); ?>contact.php" class="btn-2">
                           Get A Quote
                         </a>
                       </div>
