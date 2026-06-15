@@ -20,7 +20,11 @@ $nav_items = [
   ['page' => 'customers', 'label' => 'Customers', 'url' => $base_path . 'customers.php'],
   ['page' => 'results', 'label' => 'Results', 'url' => $base_path . 'results.php'],
   ['page' => 'contact', 'label' => 'Contact', 'url' => $base_path . 'contact.php'],
-  ['page' => 'login', 'label' => Auth::check() ? 'Admin' : 'Login', 'url' => Auth::check() ? $base_path . 'admin/index.php' : $base_path . 'login.php'],
+  [
+    'page' => 'login',
+    'label' => Auth::check() ? 'Admin' : (Auth::memberCheck() ? 'Logout' : 'Login'),
+    'url' => Auth::check() ? $base_path . 'admin/index.php' : (Auth::memberCheck() ? $base_path . 'logout.php' : $base_path . 'login.php'),
+  ],
 ];
 ?>
 <!DOCTYPE html>

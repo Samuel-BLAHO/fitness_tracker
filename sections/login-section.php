@@ -27,6 +27,12 @@
           </div>
         </div>
         <form class="login_form" action="" method="post">
+          <input type="hidden" name="csrf_token" value="<?php echo e($csrfToken); ?>">
+<?php if (!empty($login_success)) { ?>
+          <div class="form_alert form_alert_success">
+            <?php echo e($login_success); ?>
+          </div>
+<?php } ?>
 <?php if (!empty($login_error)) { ?>
           <div class="form_alert form_alert_error">
             <?php echo e($login_error); ?>
@@ -34,7 +40,7 @@
 <?php } ?>
           <div>
             <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            <input type="email" id="email" name="email" placeholder="Enter your email" value="<?php echo e($login_email ?? ''); ?>" required>
           </div>
           <div>
             <label for="password">Password</label>
@@ -51,7 +57,7 @@
             Login
           </button>
           <p class="signup_text">
-            Admin area for managing website services.
+            Don't have an account? <a href="register.php">Register here</a>
           </p>
         </form>
       </div>

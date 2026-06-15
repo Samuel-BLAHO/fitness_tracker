@@ -36,7 +36,7 @@ CREATE TABLE services (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO admins (name, email, password_hash) VALUES
-('Site Admin', 'admin@example.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2uheWG/igi.');
+('Site Admin', 'admin@example.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi');
 
 INSERT INTO services (title, description, image, sort_order, is_active) VALUES
 ('CROSSFIT TRAINING', 'High-intensity workouts for strength, stamina, and confidence.', 'images/s-1.jpg', 1, 1),
