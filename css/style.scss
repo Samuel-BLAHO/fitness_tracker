@@ -599,6 +599,201 @@ a:focus {
 
 }
 
+.review_panel {
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.review_form,
+.review_prompt,
+.review_empty,
+.review_card {
+    background-color: $white;
+    box-shadow: 0 0 25px 0 rgba($black, 0.08);
+}
+
+.review_form {
+    padding: 32px;
+    margin-bottom: 38px;
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: $btnBlack;
+    }
+
+    input[type="text"],
+    select,
+    textarea {
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid #ac9784;
+        background-color: transparent;
+        padding: 12px 0;
+        margin-bottom: 20px;
+        outline: none;
+    }
+
+    textarea {
+        resize: vertical;
+        min-height: 130px;
+    }
+}
+
+.review_form_grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 18px;
+}
+
+.review_actions,
+.review_manage {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.review_actions button,
+.review_actions a,
+.review_manage a,
+.review_manage button {
+    display: inline-block;
+    padding: 10px 24px;
+    background-color: $btnBlack;
+    border: 1px solid $btnBlack;
+    color: $white;
+    font-weight: 600;
+    cursor: pointer;
+    line-height: 1.4;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.review_actions a {
+    background-color: transparent;
+    color: $btnBlack;
+}
+
+.review_actions button:hover,
+.review_manage button:hover {
+    background-color: transparent;
+    color: $btnBlack;
+}
+
+.review_actions a:hover {
+    background-color: $btnBlack;
+    color: $white;
+}
+
+.review_manage a {
+    background-color: $primary;
+    border-color: $primary;
+    color: $btnBlack;
+}
+
+.review_manage a:hover {
+    background-color: transparent;
+    color: $primary;
+}
+
+.review_manage button {
+    background-color: #9f2525;
+    border-color: #9f2525;
+}
+
+.review_manage button:hover {
+    color: #9f2525;
+}
+
+.review_prompt,
+.review_empty {
+    padding: 22px 24px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.review_prompt p,
+.review_empty {
+    margin: 0;
+}
+
+.review_prompt a {
+    color: $primary;
+    font-weight: 600;
+}
+
+.review_list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.review_card {
+    padding: 26px;
+    border-top: 5px solid $primary;
+    overflow-wrap: anywhere;
+
+    h5 {
+        font-weight: bold;
+        margin-bottom: 6px;
+        color: $btnBlack;
+
+        &::before {
+            display: none;
+        }
+    }
+}
+
+.review_card_header {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 16px;
+}
+
+.review_card_header span,
+.review_meta {
+    color: #666666;
+    font-size: 14px;
+}
+
+.review_card p {
+    margin: 0;
+    color: #444444;
+    line-height: 1.7;
+}
+
+.review_rating {
+    background-color: $primary;
+    color: $btnBlack;
+    font-weight: 700;
+    white-space: nowrap;
+    padding: 6px 12px;
+    align-self: flex-start;
+}
+
+.review_meta {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin: 18px 0 0;
+}
+
+.review_manage {
+    margin-top: 20px;
+
+    form {
+        margin: 0;
+    }
+}
+
+.review_empty {
+    grid-column: 1 / -1;
+}
+
 // end client section
 
 // result section
@@ -790,6 +985,7 @@ a:focus {
         }
 
         input[type="email"],
+        input[type="text"],
         input[type="password"] {
             width: 100%;
             border: none;
@@ -847,6 +1043,24 @@ a:focus {
 }
 
 // end login section
+
+.form_alert {
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.form_alert_error {
+    background-color: #ffe8e8;
+    color: #8a1f1f;
+    border-left: 4px solid #c83232;
+}
+
+.form_alert_success {
+    background-color: #e8f7ed;
+    color: #1e6b36;
+    border-left: 4px solid #2f9e55;
+}
 
 /* info section */
 .info_section {

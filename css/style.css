@@ -623,6 +623,214 @@ a:focus {
   background-color: #f8bc1a;
 }
 
+.review_panel {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.review_form,
+.review_prompt,
+.review_empty,
+.review_card {
+  background-color: #ffffff;
+  -webkit-box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.08);
+          box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.08);
+}
+
+.review_form {
+  padding: 32px;
+  margin-bottom: 38px;
+}
+
+.review_form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #151615;
+}
+
+.review_form input[type="text"],
+.review_form select,
+.review_form textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #ac9784;
+  background-color: transparent;
+  padding: 12px 0;
+  margin-bottom: 20px;
+  outline: none;
+}
+
+.review_form textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+.review_form_grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 18px;
+}
+
+.review_actions,
+.review_manage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 12px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.review_actions button,
+.review_actions a,
+.review_manage a,
+.review_manage button {
+  display: inline-block;
+  padding: 10px 24px;
+  background-color: #151615;
+  border: 1px solid #151615;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  line-height: 1.4;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.review_actions a {
+  background-color: transparent;
+  color: #151615;
+}
+
+.review_actions button:hover,
+.review_manage button:hover {
+  background-color: transparent;
+  color: #151615;
+}
+
+.review_actions a:hover {
+  background-color: #151615;
+  color: #ffffff;
+}
+
+.review_manage a {
+  background-color: #f8bc1a;
+  border-color: #f8bc1a;
+  color: #151615;
+}
+
+.review_manage a:hover {
+  background-color: transparent;
+  color: #f8bc1a;
+}
+
+.review_manage button {
+  background-color: #9f2525;
+  border-color: #9f2525;
+}
+
+.review_manage button:hover {
+  color: #9f2525;
+}
+
+.review_prompt,
+.review_empty {
+  padding: 22px 24px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.review_prompt p,
+.review_empty {
+  margin: 0;
+}
+
+.review_prompt a {
+  color: #f8bc1a;
+  font-weight: 600;
+}
+
+.review_list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.review_card {
+  padding: 26px;
+  border-top: 5px solid #f8bc1a;
+  overflow-wrap: anywhere;
+}
+
+.review_card_header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 16px;
+}
+
+.review_card h5 {
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #151615;
+}
+
+.review_card h5::before {
+  display: none;
+}
+
+.review_card_header span,
+.review_meta {
+  color: #666666;
+  font-size: 14px;
+}
+
+.review_card p {
+  margin: 0;
+  color: #444444;
+  line-height: 1.7;
+}
+
+.review_rating {
+  background-color: #f8bc1a;
+  color: #151615;
+  font-weight: 700;
+  white-space: nowrap;
+  padding: 6px 12px;
+  align-self: flex-start;
+}
+
+.review_meta {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 14px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 18px 0 0;
+}
+
+.review_manage {
+  margin-top: 20px;
+}
+
+.review_manage form {
+  margin: 0;
+}
+
+.review_empty {
+  grid-column: 1 / -1;
+}
+
 .result_section {
   color: #ffffff;
   background-color: #3c0e78;
@@ -853,6 +1061,7 @@ a:focus {
 }
 
 .login_section .login_form input[type="email"],
+.login_section .login_form input[type="text"],
 .login_section .login_form input[type="password"] {
   width: 100%;
   border: none;
@@ -937,6 +1146,12 @@ a:focus {
   background-color: #ffe8e8;
   color: #8a1f1f;
   border-left: 4px solid #c83232;
+}
+
+.form_alert_success {
+  background-color: #e8f7ed;
+  color: #1e6b36;
+  border-left: 4px solid #2f9e55;
 }
 
 .admin_section {

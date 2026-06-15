@@ -74,6 +74,32 @@
         width: 100%;
     }
 
+    .review_form_grid,
+    .review_list {
+        grid-template-columns: 1fr;
+    }
+
+    .review_card_header {
+        flex-direction: column;
+    }
+
+    .review_form {
+        padding: 25px;
+    }
+
+    .review_actions,
+    .review_manage {
+        align-items: stretch;
+    }
+
+    .review_actions button,
+    .review_actions a,
+    .review_manage a,
+    .review_manage form,
+    .review_manage button {
+        width: 100%;
+    }
+
     .result_section .detail-box {
         padding: 45px 0 90px 0;
     }
