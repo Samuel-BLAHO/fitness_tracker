@@ -10,9 +10,19 @@ class Auth
         return isset($_SESSION['admin_id']);
     }
 
+    public static function id(): ?int
+    {
+        return isset($_SESSION['admin_id']) ? (int) $_SESSION['admin_id'] : null;
+    }
+
     public static function memberCheck(): bool
     {
         return isset($_SESSION['user_id']);
+    }
+
+    public static function memberId(): ?int
+    {
+        return isset($_SESSION['user_id']) ? (int) $_SESSION['user_id'] : null;
     }
 
     public static function userName(): string

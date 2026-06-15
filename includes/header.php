@@ -160,7 +160,7 @@ $nav_items = [
                           Read More
                         </a>
                         <a href="<?php echo e($base_path); ?>contact.php" class="btn-2">
-                          Get A Quote
+                          Get In Touch
                         </a>
                       </div>
                     </div>
