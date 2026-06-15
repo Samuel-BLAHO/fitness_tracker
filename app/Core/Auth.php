@@ -10,9 +10,19 @@ class Auth
         return isset($_SESSION['admin_id']);
     }
 
+    public static function memberCheck(): bool
+    {
+        return isset($_SESSION['user_id']);
+    }
+
     public static function userName(): string
     {
         return $_SESSION['admin_name'] ?? 'Admin';
+    }
+
+    public static function memberName(): string
+    {
+        return $_SESSION['user_name'] ?? 'Member';
     }
 
     public static function login(int $id, string $name): void
@@ -20,6 +30,13 @@ class Auth
         session_regenerate_id(true);
         $_SESSION['admin_id'] = $id;
         $_SESSION['admin_name'] = $name;
+    }
+
+    public static function memberLogin(int $id, string $username): void
+    {
+        session_regenerate_id(true);
+        $_SESSION['user_id'] = $id;
+        $_SESSION['user_name'] = $username;
     }
 
     public static function logout(): void
@@ -42,4 +59,3 @@ class Auth
         }
     }
 }
-

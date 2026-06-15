@@ -5,11 +5,20 @@ CREATE DATABASE IF NOT EXISTS fitness_tracker
 USE fitness_tracker;
 
 DROP TABLE IF EXISTS services;
+DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS admins;
 
 CREATE TABLE admins (
   id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(100) NOT NULL,
+  email VARCHAR(150) NOT NULL UNIQUE,
+  password_hash VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE users (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(100) NOT NULL UNIQUE,
   email VARCHAR(150) NOT NULL UNIQUE,
   password_hash VARCHAR(255) NOT NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
@@ -36,4 +45,3 @@ INSERT INTO services (title, description, image, sort_order, is_active) VALUES
 ('HEALTH', 'Fitness habits and coaching that support a healthier lifestyle.', 'images/s-4.jpg', 4, 1),
 ('WORKOUT', 'Guided workout sessions for different training goals.', 'images/s-5.jpg', 5, 1),
 ('STRATEGIES', 'Personal training plans and progress strategies.', 'images/s-6.jpg', 6, 1);
-
